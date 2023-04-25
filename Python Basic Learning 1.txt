@@ -1,0 +1,123 @@
+Basic Questions :
+
+Q1. What are components of a computer ?
+=> ALU,Control Units,Register,Input device and output device
+Q2. Which CPU are you using in you laptop / mobile / PC ?
+	Intel i5	
+Q3. What is size of RAM in your PC ?
+	12 GB
+Q4. Read Python documentation from
+https://docs.python.org/3/tutorial/index.html
+Q5. What are different implementations of Python ? Which implementation we are using ?
+	There are many Python Implementation:
+		One which is basic is CPython.
+		Few are : CrossTwine Linker, Cinder , Pyjion, wpython,etc
+Q6. Who created python ? in which year ? where ?
+	Guido Van Rossum, 1991,  Centrum Wiskunde & Informatica 
+ 
+Q7. What is PVM ?
+Python Virtual Machine used to run Python python code and provide security.
+Q8. Python is platform independent or not ? Which platforms python can run ?
+	Yes, It is Platform independant as it generate bytecode. It can run in Windows, Mac OS, Linux. 
+Q9. Why python is platform independent ? What makes it platform independent ?
+	It generates bytecode which can be run by PVM without configuring hardware.
+Q10. WAP to Print "Hello IACSD" and write comment describing author of the program and date created
+	print("Hello IACSD")
+	"""
+	Author: Prajwal Dhage and Gaurav Kothavade
+	17 April 2023
+	"""
+Q11. Find working of various functions (mini 7) from math library of python which is provided as standard library. 
+https://docs.python.org/3/library/math.html
+You can also try it yourself.
+Ex. 
+import math
+print(math.factorial(4))
+print(math.sin(90))
+Q12. Open spyder IDE and create a python program (.py file) to print Hello world!. Run the program and check the put on console.
+	print("Hello World")
+	O/P: Hello World	
+Q13.WAP using spyder IDE.  Import math library and print the gcd, lcm of two numbers.
+		gcd=math.gcd(4,6)
+		print(gcd)
+		print(4*6/gcd)
+Q14. WAP using spyder IDE. Use math library. Print number of options you have, when you are given 5 different characters and you need to select 3 of them without repeatitions. (find permutations)
+
+Q15. WAP using spyder IDE. Use math library. Print number of options you have to select 20 students out of 60 without repeatitions. ( Obviously here order doesn't matter, so find combinations) 
+	import math
+	a=math.comb(60, 20)
+	print(a)		
+Q16. WAP using spyder IDE. Use math library. Try to find log of zero. Which error is given ? 
+Also try to find square root of any negative number. What error is give?
+=>
+import math
+a=math.log(0)
+print(a)
+ValueError: math domain error
+
+import math
+a=math.sqrt(-1)
+print(a)
+ValueError: math domain error
+
+Q17. WAP to create a variable v1 and store any number. Find the square root of that number by using v1 in math.sqrt() function.
+=>
+	import math
+	v1=45
+	print(math.sqrt(v1))
+
+Q18. Why python is considered as slow compared to C, C++ ?
+Refer : https://stackoverflow.com/questions/3033329/why-are-python-programs-often-slower-than-the-equivalent-program-written-in-c-or-c++
+
+Python is a higher level language than C, which means it abstracts the details of the computer from you - memory management, pointers, etc, and allows you to write programs in a way which is closer to how humans think.
+
+It is true that C code usually runs 10 to 100 times faster than Python code if you measure only the execution time. However if you also include the development time Python often beats C. For many projects the development time is far more critical than the run time performance. Longer development time converts directly into extra costs, fewer features and slower time to market.
+
+Internally the reason that Python code executes more slowly is because code is interpreted at runtime instead of being compiled to native code at compile time.
+
+Other interpreted languages such as Java bytecode and .NET bytecode run faster than Python because the standard distributions include a JIT compiler that compiles bytecode to native code at runtime. The reason why CPython doesn't have a JIT compiler already is because the dynamic nature of Python makes it difficult to write one. There is work in progress to write a faster Python runtime so you should expect the performance gap to be reduced in the future, but it will probably be a while before the standard Python distribution includes a powerful JIT compiler.
+
+Q19. Check where .pyc files are stored after you run the program for Q15. 
+import math
+import py_compile
+py_compile.compile('hello.py')
+
+Advanced Assignments
+Q. What are different extensions supported by python?
+What is meaning of .py , .pyc, .pyz, .pyo, .pyd , etc extensions supported by python ?
+	.py: python source file
+	.pyc: python compiled bytecode
+	.pyz: python zipped executables file
+	.pyo: file format for .pyc file before python 3.5
+	.pyd: This is basically windows dll file(or creating 				module)
+
+Q. Check what happens if we print math.sqrt without any parnthesis ? What happens if we print math.sqrt() without passing any number to it?
+=>
+import math
+print(math.sqrt)
+<built-in function sqrt>
+
+import math
+print(math.sqrt())
+TypeError: math.sqrt() takes exactly one argument (0 given)
+
+Q. Can we convert .pyc file to python code? how?
+=>
+Q. What is Global Interpreter Lock (GIL)?
+=> https://wiki.python.org/moin/GlobalInterpreterLock
+https://www.geeksforgeeks.org/what-is-the-python-global-interpreter-lock-gil/
+
+Q. Which language is used to write python interpreter?
+=> C programming
+
+Q. What is advantage of garbage collector over manual memory management by the programmer ?
+=> Due to Garbage Collector, user doesn't need to worry about memory deallocation for objects in heap. It will be removed by Garbage Collector and there is no possibility of memory leakage.
+
+Q. When variable is created what is on stack and what part is on heap ?
+=> Reference Variable is created on Stack
+	and Data objects are created on Heap
+
+Q. What is garbage collector ? How reference counting works?
+=>
+Garbage Collection is an application which use in Cpython to deallocate memory to object. 
+In python there is Reference Counter type variable which counts number of reference to objects and when the count become zero it deallocate memory to object and its references.  
