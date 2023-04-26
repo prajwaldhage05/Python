@@ -1,0 +1,575 @@
+Basic Assignment
+
+Q1. What will be output of printing following calculations
+a. 1.5e200 *2.0e210 => inf
+b. 3.4e-320 / 1e100 => 0.0
+Explain the output
+
+Q2. What is output of printing following
+a. 1/3
+b. format(1/3, '.3f')
+c. format(1/3, '.1f')
+d. 6*1/3
+e. 1/3 + 1/3 + 1/3 + 1/3 + 1/3 + 1/3
+=>
+0.3333333333333333
+0.333
+0.3
+2.0
+1.6666666666666665
+
+Q3. In above question what is difference between output of a and b ? also, d and e?
+0.3333333333333333
+0.333
+Q4. Study how format function works to print floating point values and strings. Then solve following using format function
+print(format(451.4815,'+'))
+print(format(451.4815,'-')) # print - 
+print(format(451.4815,'20')) # give 20 space
+print(format(451.4815,'<09.3f')) # left alignment
+print(format(451.4815,'>09.3f')) # right alignment
+print(format(451.4815,'^9.3f')) # center alignment
+
+a. print only first 5 decimal values of 22/7 (hint: see b of Q3)
+=>
+print(format(22/7,'.5f'))
+
+b. print Hello string with 5 spaces on right side, 'Hello     ' ( hint: use <)
+=> print(format('Hello','>10'))
+
+c. print Hello string with 5 spaces on left side, '     Hello' ( hint: use <) 
+=> print(format('Hello','<10'))
+
+d. print Hello string with 5 '#' on left side and 5 '#' on right side, '     Hello     ' ( hint: use ^ and # as fill value)
+=> print(format('Hello','#^15'))
+
+e. print 10 spaces (hint: give 10 as argument)
+=> print(format('','10'))
+
+Q5. We can use ord() to print ASCII value of single character and chr() to convert given ASCII value to character. 
+
+a. find ASCII of characters'a' , 'A' , 'z' , 'Z' using ord() one by one
+=> 
+print(ord('A')) # 65
+print(ord('Z')) # 90
+print(ord('a')) # 97
+print(ord('z')) # 122
+
+b. find ASCII of characters '0', '9', ' ', "\n" , "\t" using ord() one by one
+=> 
+print(ord('0')) # 48
+print(ord('9')) # 57
+print(ord(' ')) # 32
+print(ord('\n')) # 10
+print(ord('\t')) # 9
+
+c. Find characters for ASCII values 35, 67, 50, 99
+d. Where ASCII value begin for lower case characters where it ends? also find same for digits and upper case characters
+=> 
+print(chr(35)) # #
+print(chr(67)) # C
+print(chr(50)) # 2
+print(chr(99)) # c
+
+Q6. Find how special chracters work inside print function
+a. print("abc","\n","bcd")
+=> 
+abc 
+ bcd
+b. print("abc\nbcd")
+=>
+abc
+bcd
+c. print(1,'\n',2)
+=> 
+1 
+ 2
+d. print("hello \n\n!!")
+=>
+hello 
+
+!!
+e. print("This is '\t' means tab")
+=> This is '	' means tab
+f. How many spaces are printed using \t?
+=> 4 spaces
+g. print("This","is","different",sep='\t')
+=> This	is	different
+h. print("This","is","different",sep='#')
+=> This#is#different
+i. print("This","is","different",sep='\n') 
+=> 
+This
+is
+different
+j. print("This","is","different",end='\n')
+=> This is different
+
+Q7. What is output of following statements and understand how operators work
+a. 10 / 2	# 5.0
+b. 10 // 2.0 # 5.0
+c. 101 / 3 # 33.666666666666664
+d. 101 // 3 # 33
+e. 101 % 3 # 2
+f. 2 ** 4 # 16
+g. 3 ** 2 # 9
+h. abs(-10) # 10
+i. divmod(101,3) # divmod gives two values , interger division and remainder
+(33, 2)
+j. 8 << 1 # 16
+k. 8 << 2 # 32 
+l. 32 >> 2 # 8
+m. 16 >> 1 # 8
+
+Q8. Write a program to take marks of 3 subjects from a student. Calculate total in variable name 'total'.
+(NOTE: Don't use sum as variable name, it is built in function in python)
+=>
+n1=int(input("Enter num1: "))
+n2=int(input("Enter num2: "))
+n3=int(input("Enter num3: "))
+total=n1+n2+n3
+print(total)
+
+Q9. Manually calculate output of following expressions using precedence and associativity rules 
+and then verify output using python shell
+a. 2 + 3 * (4 -1) # 11
+b. 2 + ((3 *4) - 8) # 6
+c. (2 + 3) * 4 # 20
+d. -10 + 25 / (16 + 12) # -9.107142857142858
+e. 2 ** 2 ** 2 # 16
+f. (3 ** 2) ** 3 # 729
+g. x = y = 3 + 5 # x=8 and y=8
+h. 8/2*(2+2) # 16.0
+
+
+Q10. Check output of following 
+a. x = y = 10 # x=10 and y=10
+b. x1 = 20 = y1 # SyntaxError: cannot assign to literal
+
+Q11. What is output of following
+a. 
+x=10
+y=34.4
+print(x and y) # 34.4
+print(x or y) # 10
+
+
+If-Else Questions :
+
+1.	A student will not be allowed to sit in exam if his/her attendence is less than 75%.  
+Take following input from user Number of classes held Number of classes attended. And print percentage of class attended  
+Is student is allowed to sit in exam or not.  
+=> 
+total_no_of_classes=int(input('Enter Number of Classes: '))
+no_of_classes_attended=int(input('Enter Attended Classes: '))
+
+percent=(no_of_classes_attended/total_no_of_classes) * 100
+print('Attendance Percentage: ',percent)
+if percent > 0.75:
+    print('You are Allowed to sit')
+else:
+    print('Sorry You are not allowed...')
+
+2. accept amount from user and find the minimum number notes required to get the amount amount =512  
+Notes: 2000,500,100,50,10,5,2,1  
+
+500-1 note  
+10  - 1 note  
+2-  1 coin  
+
+amount=20550  
+2000 – 10 note  
+500 – 1 note  
+50 -1 note  
+amt=int(input('enter amount:'))
+
+print('amount =',amt)
+
+notes_2k=amt//2000
+
+if(bool(notes_2k)):
+    print('2000 -',notes_2k,'note')
+
+remaining_amt=amt%2000
+
+notes_500=remaining_amt//500
+
+if(bool(notes_500)):
+    print('500 -',notes_500,'note')
+
+remaining_amt=remaining_amt%500
+
+notes_100=remaining_amt//100
+
+if(bool(notes_100)):
+    print('100 -',notes_100,'note')
+
+remaining_amt=remaining_amt%100
+
+notes_50=remaining_amt//50
+
+if(bool(notes_50)):
+    print('50 -',notes_50,'note')
+
+remaining_amt=remaining_amt%50
+
+notes_10=remaining_amt//10
+
+if(bool(notes_10)):
+    print('10 -',notes_10,'note')
+
+remaining_amt=remaining_amt%10
+
+notes_5=remaining_amt//5
+
+if(bool(notes_5)):
+    print('5 -',notes_5,'note')
+
+remaining_amt=remaining_amt%5
+
+notes_2=remaining_amt//2
+
+if(bool(notes_2)):
+    print('2 -',notes_2,'note')
+
+remaining_amt=remaining_amt%2
+
+notes_1=remaining_amt//1
+
+if(bool(notes_1)):
+    print('1 -',notes_1,'note')
+
+3.	Modify the above question Q1 to allow student to sit if he/she has medical cause. Ask user if he/she has medical cause or not ( 'Y' or 'N' ) and print accordingly.  
+4.	A school has following rules for grading system:  
+a.	Below 25 - F  
+b.	25 to 45 - E  
+c.	45 to 50 - D  
+d.	50 to 60 - C  
+e.	60 to 80 - B  
+f.	Above 80 - A  
+Ask user to enter marks and print the corresponding grade.  
+=>
+import sys
+total_no_of_classes=int(input('Enter Number of Classes: '))
+no_of_classes_attended=int(input('Enter Attended Classes: '))
+
+percent_attendance=(no_of_classes_attended/total_no_of_classes) * 100
+print('Attendance Percentage: ',percent_attendance)
+
+allow=0
+if percent_attendance > 75:
+    print('You are Allowed to sit')
+else:
+    print('Sorry You are not allowed...')
+    allow=1
+    
+    
+if allow == 1:
+    ans=input('You attendance is < 75%\nDo you have any medical cause(Y if Yes /N if No)')
+    if ans=='Y':
+        pass
+    else:
+        print("In such case I am unable to help you. You should go to Head office to talk about your schooling")
+        sys.exit()
+
+percent=int(input('Enter your marks (out of 500):'))
+mark=(percent/500)*100
+print('You got ',mark,'%')
+if mark<25:
+    print('Grade: F')
+elif 25<=mark<45:
+    print('Grade: E')
+elif 45<=mark<50:
+    print('Grade: D')
+elif 50<=mark<60:
+    print('Grade: C')
+elif 60<=mark<80:
+    print('Grade: B')
+elif mark>=80:
+    print('Grade: A')
+else:
+    print('Sorry Wrong Input')
+
+
+5. If  x = 2 y = 5 z = 0  then find values of the following expressions and Print the output of following statements  
+a.	x == 2  # True
+b.	x != 5  # True
+c.	x != 5 & y >= 5 # True 
+d.	z != 0 | x == 2 # True
+e.	not(y < 10)  # False
+  
+6.	Accept number from user and check whether it is divisible by 5 and 11 if divisible then display appropriate message.  
+=>
+user=int(input('Enter no. of Users:'))
+if user%5==0 and user%11==0:
+    print('Number is divisible by 5 and 11')
+else:
+    print('Number is not divisible by 5 and 11')
+
+7.	Write a program to calculate the electricity bill (accept number of unit from user) according to the following criteria :  
+             Unit                                    Price    
+First 100 units                                       no charge  
+Next 100 units                                        Rs 5 per unit  
+After 200 units                                       Rs 10 per unit  
+(For example if input unit is 350 than total bill amount is Rs2000)  
+=>
+unit=int(input('Enter unit: '))
+total=0
+if unit<=100:
+    total = unit * 0 
+elif 100<unit<=200:
+    total = (unit-100) * 5
+else:
+    total = (unit-200) * 10 + 100*5 + 100*0
+    
+print('Total: ',total)
+
+8.	Write a program to check whether the last digit of a number( entered by user ) is divisible by 3 or not.  
+=>
+no=int(input('Enter a number:'))
+last_digit=no%10
+
+if last_digit%3==0:
+    print('Last Digit is divisible by 3')
+else:
+    print('Last Digit is not divisible by 3')
+
+9.	Write a program to check whether an years is leap year or not the year is leap if it satisfies following condition  
+•	If the year is divisible by 100 or If it is divisible by 100, then it should also be divisible by 400 then it is leap year  
+•	otherwise, all other years divisible by 4 and not divisible by 100 then it is leap year.  
+=>
+year=int(input('Enter Year:'))
+if(year%100==0):
+    if year%400 == 0:
+        print('Leap Year')
+elif year%4==0:
+    print('Leap Year')
+else:
+    print('Not Leap Year')
+
+10. Write a program to accept the price of a bike and display the road tax and insurance to be paid according to the following criteria . also display total amount to be paid.  
+      
+        Cost price (in Rs)           Tax                Inssurance  
+        > 100000                     15 %                   20%  
+        > 50000 and <= 100000        10%                    8%  
+        <= 50000                     5%                     5%   
+=> 
+bike_price=int(input('Enter Price of Bike: '))
+if bike_price>100000:
+    ins=0.2*bike_price
+    tax=0.15*bike_price
+elif 100000<=bike_price>50000:
+    ins=0.08*bike_price
+    tax=0.1*bike_price
+elif bike_price<=50000:
+    ins=0.05*bike_price
+    tax=0.05*bike_price
+
+total=ins+tax+bike_price
+print('Total Price of Bike:',total)
+
+
+
+Loop Questions:
+
+1.	Accept 10 integers from user  and print their average value on the screen 
+=>
+sum=0
+for i in range(10):
+    no=int(input('Enter number:'))
+    sum=sum+no
+    
+print('Average:',sum/10)
+
+
+2.	Print the following patterns using loop : 
+a. 
+* 
+** 
+***
+****
+=>
+for i in range(5):
+    print('*'*i)
+
+b. 
+    *                    
+  ***                
+***** 
+  ***
+    * 
+spaces=4
+stars=5
+for i in range(1,stars+1,2):
+    print(' '*spaces,'*'*i,sep='')
+    spaces-=2
+spaces=2
+for i in range(3,0,-2):
+    print(' '*spaces,'*'*i,sep='')
+    spaces+=2
+
+
+c. 
+1010101          
+ 10101  
+  101   
+   1    
+count=0
+for i in range(3,-1,-1):
+    print(' '*count,end='')
+    print('10'*i,end='1\n')
+    count+=1
+
+
+d.
+1  
+1 2  
+1 2 3  
+1 2 3 4  
+1 2 3 4 5 
+=>
+for i in range(1,6):
+    for j in range(1,i+1):
+        print(j,end='')
+    print()    
+    
+
+ 
+3.	Write a program to find greatest common divisor (GCD) or highest common factor (HCF) of given two numbers. 
+=>
+dividend=int(input('enter first num'))
+divisor=int(input('enter second num'))
+r=1
+while(r!=0):
+    r=dividend%divisor
+    if(r!=0):
+        dividend=divisor
+        divisor=r
+print('HCF: ',divisor)
+
+
+4.	Take integer inputs from user until he/she presses q ( Ask to press q to quit after every integer input ). Print average and product of all numbers. 
+
+loop='l'
+total=0
+product=1
+count=1
+while loop!='q':
+    no=int(input('Enter number:'))
+    total+=no
+    product*=no
+    loop=input('Press q to quit: ')
+    count+=1
+print('Average:',total/count)
+print('Product:',product)
+
+5.	Given a number count the total number of digits in a number and also find sum of digits of the number. 
+=>
+digit=int(input('Enter a number:'))
+count=0
+rem=0
+total=0
+while digit!=0:
+    rem=digit%10
+    total+=rem
+    digit=digit//10
+    count+=1
+print('Count and Sum of number: ',count,total)
+
+6.	To display the cube of the number upto given an integer. If the given integer is 5, then display cube of 1 to 4. 
+=>
+no=int(input('Enter a number:'))
+for i in range(1,no):
+    print(i*i*i)
+    
+
+7.	Accept 20 numbers from user and display sum of only even numbers. 
+total=0
+for i in range(20):
+    no=int(input('Enter a number:'))
+    if no%2 == 0:
+       total+=no
+     
+print('Total: ',total)
+
+8.	Ask user number of terms to be generated of a series. 
+generate numbers for the following series and find its addition 
+[9 + 99 + 999 + 9999+……..] 
+=>
+no=int(input('Enter a number:'))
+var=0
+for i in range(1,no):
+    var=var + int('9'*i)
+    print('9'*i,end=' + ')
+var+=int('9'*no)
+print('9'*no,'=',var)
+
+9.	Write a program in python to display the sum of the series [ 1+x+x^2/2!+x^3/3!+....]. Go to the editor 
+Test Data : 
+Input the value of x :3 
+Input number of terms : 5 
+Expected Output : 
+The sum is : 16.375000 
+=>
+
+10.	Write a program in python to find the sum of the series [ x - x^3 + x^5 –x^7+x^9-x^11+ ......]. Go to the editor 
+Test Data : 
+Input the value of x :2 Input number of terms : 5 Expected Output : 
+The values of the series: 
+2 
+-8 
+32 
+-128 
+512 
+The sum = 410 
+
+11.	Take a number from user and check if it is prime or not
+
+12.	Take a number from user and print sum of all odd numbers till that number.
+Ex. Enter a no : 10   
+Sum of all odd numbers till 10 : 3+5+7+9  =24
+=>
+no=int(input('Enter a number: '))
+total=0
+for i in range(1,no+1):
+    if i%2 != 0:
+       total+=i
+       print(i)
+
+print('Sum of odd number: ',total)
+
+
+Advanced questions
+Q. Create a variable storing integer value. Print the identity of that variable. Then change value of that variable and again print the identity.
+Observe both values, what is your conclusion?
+=>
+N= 10 address:  1765272060432
+N= 20 address:  1765272060752
+As PVM internally create object in heap and reference variable in stack and reference variable just points to object when assign a value which is why the location of object gets changed.
+
+Q. What is PEMDAS rule ? What is BODMAS ? Is there any difference in them ?
+=>
+PEMDAS
+Parentheses
+Exponentiation
+Multiplication
+Division
+Addition
+Subtraction
+
+BODMAS
+Brackets
+Orders
+Division
+Multiplication
+Addition
+Substraction
+
+Q. What is PEMDAS vs PEDMAS ? is there any difference?
+=> They both are same. DMAS works from left to right.
+
+
+
+
+
+
+
